@@ -1,0 +1,67 @@
+/* USER BOUGHT TOAST */
+.user-bought-toast {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  padding: 28px;
+}
+
+.user-bought-toast .user-item {
+  padding: 12px 18px;
+  border-radius: 8px;
+  background-color: #24292f;
+  -webkit-box-shadow: 0 0 0 1px #000, 0 30px 30px rgb(0 0 0 / 7%),
+    0 15px 15px rgb(0 0 0 / 6%), 0 10px 8px rgb(0 0 0 / 5%),
+    0 4px 4px rgb(0 0 0 / 4%), 0 2px 2px rgb(0 0 0 / 3%);
+  box-shadow: 0 0 0 1px #000, 0 30px 30px rgb(0 0 0 / 7%),
+    0 15px 15px rgb(0 0 0 / 6%), 0 10px 8px rgb(0 0 0 / 5%),
+    0 4px 4px rgb(0 0 0 / 4%), 0 2px 2px rgb(0 0 0 / 3%);
+  transition: all 0.5s ease;
+  animation: fadeIn ease 0.5s;
+}
+
+.user-bought-toast .user-item.hide {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-32px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.user-bought-toast .user-item + .user-item {
+  margin-top: 16px;
+}
+
+.user-bought-toast .user-item .inner {
+  display: flex;
+  align-items: center;
+}
+
+.user-bought-toast .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #333;
+}
+
+.user-bought-toast .info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+  font-size: 1.4rem;
+}
+
+.user-bought-toast .name {
+  font-weight: 500;
+}

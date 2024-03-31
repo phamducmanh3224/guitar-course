@@ -1,0 +1,44 @@
+@use "../base/mixins";
+
+/* SECTION MENTOR */
+.section.mentor {
+  margin-top: 120px;
+
+  blockquote {
+    .desc {
+      font-style: italic;
+      font-size: 1.8rem;
+
+      @include mixins.screen(mobile) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+.section.mentor .right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .desc {
+    margin-top: 40px;
+    max-width: 490px;
+    font-style: italic;
+    font-size: 1.8rem;
+  }
+
+  .img {
+    border-radius: 16px;
+    flex-shrink: 0;
+  }
+}
+
+.section.mentor .column .img {
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}

@@ -1,0 +1,117 @@
+@use "../base/mixins";
+
+/* FAQ */
+.faq {
+  margin: 0 24px;
+
+  &-inner {
+    width: min(890px, 100%);
+    padding: 100px 0 40px;
+    margin: 0 auto;
+
+    @include mixins.screen(mobile) {
+      padding-top: 40px;
+    }
+  }
+
+  &-head {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  &-topic {
+    margin-top: 5rem;
+    color: var(--color-fg-muted);
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  &-item {
+    position: relative;
+    display: block;
+    padding: 16px 0;
+    border-bottom: 1px solid rgb(48, 54, 61);
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 0;
+      background: rgb(48, 54, 61);
+      transition: 0.2s;
+    }
+
+    &:hover::after {
+      height: 2px;
+    }
+
+    input[type="checkbox"]:checked {
+      ~ .body {
+        display: block;
+      }
+
+      ~ .topic {
+        .plus {
+          display: none;
+        }
+
+        .minus {
+          display: block;
+        }
+      }
+    }
+
+    .topic {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      font-size: 2rem;
+      background: linear-gradient(
+        -70deg,
+        var(--mktg-accent-primary, var(--color-fg-muted)) 0%,
+        var(--mktg-accent-secondary, var(--color-fg-muted)) 100%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      transition: transform 0.3s ease, opacity 0.2s ease;
+    }
+
+    .title {
+      padding-left: 30px;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #fff;
+
+      @include mixins.screen(mobile) {
+        padding-left: 16px;
+      }
+    }
+
+    .body {
+      display: none;
+      margin: 10px 0 10px 48px;
+      color: var(--fgColor-muted, var(--color-fg-muted));
+      font-size: 1.8rem;
+
+      @include mixins.screen(mobile) {
+        margin-left: 36px;
+      }
+    }
+
+    .minus {
+      display: none;
+    }
+  }
+}

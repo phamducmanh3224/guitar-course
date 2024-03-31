@@ -1,0 +1,46 @@
+@mixin inline-animation(
+  $duration,
+  $function: null,
+  $count: null,
+  $fillMode: null
+) {
+  $name: inline-#{unique-id()};
+
+  @keyframes #{$name} {
+    @content;
+  }
+
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-iteration-count: $count;
+  animation-timing-function: $function;
+  animation-fill-mode: $fillMode;
+}
+
+@mixin screen($break-point) {
+  @if $break-point == mobile {
+    @media (min-width: 0px) and (max-width: 739px) {
+      @content;
+    }
+  }
+  @if $break-point == tablet {
+    @media (min-width: 740px) and (max-width: 1023px) {
+      @content;
+    }
+  }
+  @if $break-point == pc {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+  @if $break-point == not-pc {
+    @media (min-width: 0px) and (max-width: 1023px) {
+      @content;
+    }
+  }
+  @if $break-point == not-mobile {
+    @media (min-width: 740px) {
+      @content;
+    }
+  }
+}

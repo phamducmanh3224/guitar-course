@@ -1,0 +1,215 @@
+@use "../base/mixins";
+
+/* HEADER */
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 120px;
+}
+
+.header .inner {
+  position: relative;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  @include mixins.screen(not-pc) {
+    justify-content: space-between;
+  }
+}
+
+/* LOGO */
+.footer .logo-wrap,
+.header .logo-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+}
+
+.footer .logo,
+.header .logo {
+  width: 50px;
+  border-radius: 8px;
+}
+
+.footer .slogan,
+.header .slogan {
+  padding-left: 12px;
+  line-height: 1.5;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* NAV */
+.header {
+  .nav {
+    margin-left: 90px;
+
+    ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+
+    a {
+      padding: 4px 12px;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    @include mixins.screen(not-pc) {
+      position: fixed;
+      inset: 0 auto 0 0;
+      z-index: 99;
+      width: 75%;
+      padding: 50px 0 0 50px;
+      margin-left: 0;
+      background: #fff;
+      translate: -100%;
+      transition: translate 0.3s;
+
+      &.open {
+        translate: 0;
+      }
+
+      &-overlay {
+        opacity: 0;
+        visibility: hidden;
+        position: fixed;
+        inset: 0;
+        z-index: 9;
+        background: rgba($color: #000000, $alpha: 0.6);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        transition: opacity visibility;
+        transition-duration: 0.3s;
+
+        &.open {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      a {
+        display: block;
+        color: #1f2328;
+        font-weight: 700;
+      }
+
+      ul {
+        flex-direction: column;
+
+        li {
+          padding: 20px 0;
+        }
+      }
+    }
+
+    @include mixins.screen(mobile) {
+      width: 80%;
+      padding: 30px 0 0 30px;
+    }
+  }
+}
+
+/* FIXED HEADER */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: #161b22;
+  -webkit-box-shadow: 0 0 0 1px #000, 0 30px 30px rgb(0 0 0 / 7%),
+    0 15px 15px rgb(0 0 0 / 6%), 0 10px 8px rgb(0 0 0 / 5%),
+    0 4px 4px rgb(0 0 0 / 4%), 0 2px 2px rgb(0 0 0 / 3%);
+  box-shadow: 0 0 0 1px #000, 0 30px 30px rgb(0 0 0 / 7%),
+    0 15px 15px rgb(0 0 0 / 6%), 0 10px 8px rgb(0 0 0 / 5%),
+    0 4px 4px rgb(0 0 0 / 4%), 0 2px 2px rgb(0 0 0 / 3%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all ease 0.3s;
+  transform: translateY(-100%);
+}
+
+.fixed-header.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.fixed-header .logo-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.fixed-header .logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+}
+
+.fixed-header .slogan {
+  margin-left: 12px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.fixed-header .inner {
+  display: flex;
+  align-items: center;
+  height: 66px;
+}
+
+.fixed-header .fixed-nav {
+  margin-left: 80px;
+}
+
+.fixed-header .fixed-nav ul {
+  display: flex;
+  gap: 32px;
+}
+
+.fixed-header .fixed-nav a {
+  font-weight: 500;
+  color: #fff;
+}
+
+.fixed-header .btn {
+  margin-left: auto;
+  height: 42px;
+  border-radius: 12px;
+}
+
+// Menu mobile
+.menu-toggle {
+  display: none;
+
+  @include mixins.screen(not-pc) {
+    position: fixed;
+    top: 12px;
+    right: 16px;
+    z-index: 8;
+    padding: 10px;
+    border-radius: 8px;
+
+    display: block;
+    background: #0d1018;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 2.4rem;
+  }
+}

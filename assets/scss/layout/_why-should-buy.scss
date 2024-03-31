@@ -1,0 +1,89 @@
+/* WHY SHOULD BUY */
+.why-should-buy {
+  margin-top: 150px;
+  padding: 70px 0 100px;
+  background-color: #161b22;
+  -webkit-box-shadow: 0 0 0 1px #000, 0 30px 30px rgb(0 0 0 / 7%),
+    0 15px 15px rgb(0 0 0 / 6%), 0 10px 8px rgb(0 0 0 / 5%),
+    0 4px 4px rgb(0 0 0 / 4%), 0 2px 2px rgb(0 0 0 / 3%);
+  box-shadow: 0 0 0 1px #000, 0 30px 30px rgb(0 0 0 / 7%),
+    0 15px 15px rgb(0 0 0 / 6%), 0 10px 8px rgb(0 0 0 / 5%),
+    0 4px 4px rgb(0 0 0 / 4%), 0 2px 2px rgb(0 0 0 / 3%);
+}
+
+.why-should-buy header {
+  text-align: center;
+}
+
+.why-should-buy .desc {
+  margin-top: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.why-should-buy .desc .icon {
+  font-size: 1.6rem;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.why-should-buy .desc:hover .icon {
+  -webkit-transform: translateX(4px);
+  -ms-transform: translateX(4px);
+  transform: translateX(4px);
+}
+
+.why-should-buy .list {
+  --columns: 2;
+  --spacing: 80px;
+
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 90px;
+  margin-left: calc(-1 * var(--spacing));
+  gap: var(--spacing) 0;
+}
+
+.why-should-buy .item {
+  width: calc(100% / var(--columns) - var(--spacing));
+  margin-left: var(--spacing);
+}
+
+.why-should-buy .item .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  color: #8957e5;
+  font-size: 2.4rem;
+  background: #20242b;
+  -webkit-box-shadow: 0 0 0 1px #000, 0 30px 30px rgb(0 0 0 / 7%),
+    0 15px 15px rgb(0 0 0 / 6%), 0 10px 8px rgb(0 0 0 / 5%),
+    0 4px 4px rgb(0 0 0 / 4%), 0 2px 2px rgb(0 0 0 / 3%);
+  box-shadow: 0 0 0 1px #000, 0 30px 30px rgb(0 0 0 / 7%),
+    0 15px 15px rgb(0 0 0 / 6%), 0 10px 8px rgb(0 0 0 / 5%),
+    0 4px 4px rgb(0 0 0 / 4%), 0 2px 2px rgb(0 0 0 / 3%);
+}
+
+.why-should-buy .third-heading {
+  margin: 20px 0;
+}
+
+.why-should-buy .item-desc {
+  color: var(--color-fg-muted);
+  font-size: 2rem;
+}

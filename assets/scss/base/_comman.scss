@@ -1,0 +1,128 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: #c9d1d9;
+  --color-fg-muted: #8b949e;
+
+  --mktg-accent-primary: #efceff;
+  --mktg-accent-secondary: #9773ff;
+
+  --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: var(--text-color);
+  background-color: #0d1018;
+  line-height: 1.6;
+  font-size: 1.6rem;
+  font-family: var(--system-ui);
+}
+
+main {
+  overflow: hidden;
+}
+
+/* COMMON */
+.container {
+  width: 1248px;
+  max-width: calc(100% - 48px);
+  margin: 0 auto;
+}
+
+.second-heading {
+  line-height: 1.4;
+  font-size: 4.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.third-heading {
+  line-height: 1.4;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.btn {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 52px;
+  border: 1.5px solid #494b52;
+  border-radius: 16px;
+  padding: 0 28px 2px;
+  font-size: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btn + .btn {
+  margin-left: 20px;
+}
+
+.btn.white {
+  color: #0d1117;
+  background-color: #fff;
+}
+
+.btn .icon {
+  position: relative;
+  top: 2px;
+  margin-left: 10px;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+  font-size: 1.6rem;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn:hover .icon {
+  -webkit-transform: translateX(4px);
+  -ms-transform: translateX(4px);
+  transform: translateX(4px);
+}
+
+.text-highlight {
+  font-weight: 600;
+  -webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient(45deg, #5ebbff -33%, #a174ff 69%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+i,
+em {
+  font-style: italic;
+}
